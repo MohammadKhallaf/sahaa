@@ -1,17 +1,10 @@
-// components/organisms/Navbar/Navbar.tsx
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-
-import styles from "./navbar.module.scss";
+import { EROUTES } from "@app/constants/routes";
 import cn from "clsx";
-import { EROUTES } from "@app/router/routes";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-
-const navLinks = [
-  { path: EROUTES.JOBS, label: "Home" },
-  { path: EROUTES.SEARCH, label: "Search" },
-  { path: EROUTES.HISTORY, label: "History" },
-];
+import styles from "./navbar.module.scss";
+import { navLinks } from "@app/constants";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
