@@ -1,26 +1,36 @@
-import RootLayout from "@components/layouts/root.layout";
+import { EROUTES } from "@app/constants";
+import RootLayout from "@layouts/root.layout";
+import JobsPage from "@pages/jobs";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 
 export default createBrowserRouter([
   {
-    path: "/",
+    path: EROUTES.ROOT,
     element: <RootLayout />,
     children: [
       {
-        path: "/jobs",
-        element: <div>Jobs</div>,
+        path: EROUTES.JOBS,
+        element: <JobsPage />,
       },
       {
-        path: "/skills",
+        path: EROUTES.SKILLS,
         element: <div>Skills</div>,
       },
       {
-        path: "*",
-        element: <Navigate to="/jobs" />,
+        path: EROUTES.SEARCH,
+        element: <div>Search</div>,
+      },
+      {
+        path: EROUTES.HISTORY,
+        element: <div>History</div>,
+      },
+      {
+        path: EROUTES.NOT_FOUND,
+        element: <Navigate to={EROUTES.JOBS} />,
       },
       {
         index: true,
-        element: <Navigate to="/jobs" />,
+        element: <Navigate to={EROUTES.JOBS} />,
       },
     ],
   },
