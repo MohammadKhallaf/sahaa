@@ -1,7 +1,9 @@
 .container {
   background-color: var(--color-secondary);
-  padding-inline: var(--spacing-xs);
+  padding-inline: var(--spacing-sm);
   padding-block: var(--spacing-xs);
   border-radius: var(--radius-sm);
   color: black;
+
+  font-size: var(--font-size-xs);
 }
