@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { forwardRef } from "react";
 import { Link } from "react-router-dom";
 import SkillBadge from "../skill-badge/skill-badge.component";
+
 import styles from "./job-card.module.scss";
 
 type Props = {

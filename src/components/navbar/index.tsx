@@ -3,8 +3,9 @@ import cn from "clsx";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import styles from "./navbar.module.scss";
 import { navLinks } from "@app/constants";
+
+import styles from "./navbar.module.scss";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

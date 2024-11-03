@@ -3,15 +3,15 @@ import { Helmet } from "react-helmet-async";
 
 type Props = PropsWithChildren<{
   title?: string;
-  header?: React.ReactNode;
   className?: string;
+  header?: React.ReactNode;
 }>;
 
 const PageContainer: React.FC<Props> = ({
   title,
   header,
-  className,
   children,
+  className,
 }) => {
   return (
     <div>

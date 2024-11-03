@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+
 import styles from "./skill-badge.module.scss";
 
 const SkillBadgeSkeleton = () => {

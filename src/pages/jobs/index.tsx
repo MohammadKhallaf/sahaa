@@ -1,13 +1,14 @@
-import PageContainer from "@components/page.container";
-import { useJobListInfinite } from "./jobs.services";
 import JobCard from "@components/job-card";
-import styles from "./jobs.module.scss";
-import { useCallback, useEffect, useRef } from "react";
 import JobCardSkeleton from "@components/job-card/job-card.skeleton";
+import PageContainer from "@components/page.container";
+import { useCallback, useRef } from "react";
+import { useJobListInfinite } from "./jobs.services";
+
+import styles from "./jobs.module.scss";
 
 const JobsPage = () => {
   const observer = useRef<IntersectionObserver>();
-  // const lastItemRef = useRef<HTMLLIElement>(null);
+
   const { data, hasNextPage, fetchNextPage, isLoading, isFetchingNextPage } =
     useJobListInfinite(6);
 
