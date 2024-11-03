@@ -1,12 +1,10 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useSkill } from "../../pages/jobs/jobs.services";
 import { skillBadgeVariants } from "./skill-badge.animation";
 import styles from "./skill-badge.module.scss";
 import SkillBadgeSkeleton from "./skill-badge.skeleton";
 
-type Props = {
-  id: string;
-};
+type Props = {  id: string;};
 
 const SkillBadge = ({ id }: Props) => {
   const { data, isLoading } = useSkill(id);
