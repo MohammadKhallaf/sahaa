@@ -2,6 +2,7 @@ import { EROUTES } from "@app/constants";
 import RootLayout from "@layouts/root.layout";
 import SearchLayout from "@layouts/search.layout";
 import JobsPage from "@pages/jobs";
+import SearchPage from "@pages/search";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 
 export default createBrowserRouter([
@@ -15,7 +16,7 @@ export default createBrowserRouter([
         children: [
           { path: EROUTES.JOBS, element: <JobsPage /> },
           { path: EROUTES.SKILLS, element: <div>Skills</div> },
-          { path: EROUTES.SEARCH, element: <div>Search</div> },
+          { path: EROUTES.SEARCH, element: <SearchPage /> },
         ],
       },
       {

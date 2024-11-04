@@ -10,9 +10,5 @@ export const jobGetOne = (uuid: string) =>
 
 export const jobSearch = (query: string) =>
   api
-    .get(`/jobs/search`, {
-      params: {
-        query,
-      },
-    })
+    .get<IJobListResponse>("/jobs/search", { params: { query } })
     .then(({ data }) => data);
