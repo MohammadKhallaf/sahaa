@@ -3,8 +3,12 @@
   --color-primary: #007bff;
   --color-primary-hover: #0069d9;
   --color-primary-active: #0062cc;
+
   --color-text: #212529;
+  --color-text-light: #6c757d;
+
   --color-background: #f8f9fa;
+  --color-input-bg: white;
 
   --color-secondary: #6c757d;
 
@@ -13,7 +17,7 @@
   --color-error: #dc3545;
 
   // Typography
-  --font-family-base: "Inter", system-ui, sans-serif;
+  --font-family-base: "Roboto", system-ui, sans-serif;
   --font-size-base: 16px;
   --font-weight-normal: 400;
   --font-weight-bold: 700;
@@ -44,7 +48,7 @@
   // Shared styles
   --navbar-height: 3rem;
 
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Roboto, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -55,6 +59,58 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.roboto-thin {
+  font-family: "Roboto", serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-light {
+  font-family: "Roboto", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: "Roboto", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-black {
+  font-family: "Roboto", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.roboto-light-italic {
+  font-family: "Roboto", serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  text-align: start;
 }
 
 // styles/mixins/_index.scss
@@ -75,4 +131,15 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.jobs-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+  padding: var(--spacing-md);
+
+  @media screen and (max-width: 500px) {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
 }

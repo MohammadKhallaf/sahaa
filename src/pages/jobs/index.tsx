@@ -4,8 +4,6 @@ import PageContainer from "@components/page.container";
 import { useCallback, useRef } from "react";
 import { useJobListInfinite } from "./jobs.services";
 
-import styles from "./jobs.module.scss";
-
 const JobsPage = () => {
   const observer = useRef<IntersectionObserver>();
 
@@ -37,8 +35,8 @@ const JobsPage = () => {
 
   return (
     <PageContainer title="Jobs">
-      <h1>Jobs ({data?.pages[0].data.meta.count})</h1>
-      <ul className={styles["jobs-container"]}>
+      <h2>Jobs ({data?.pages[0].data.meta.count})</h2>
+      <ul className="jobs-container">
         {jobList?.map((job, idx, arr) => (
           <JobCard
             key={job.id}

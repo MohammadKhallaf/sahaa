@@ -26,6 +26,9 @@ importers:
       framer-motion:
         specifier: ^11.11.11
         version: 11.11.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      lodash.debounce:
+        specifier: ^4.0.8
+        version: 4.0.8
       normalize.css:
         specifier: ^8.0.1
         version: 8.0.1
@@ -38,6 +41,9 @@ importers:
       react-helmet-async:
         specifier: ^2.0.5
         version: 2.0.5(react@18.3.1)
+      react-icons:
+        specifier: ^5.3.0
+        version: 5.3.0(react@18.3.1)
       react-redux:
         specifier: ^9.1.2
         version: 9.1.2(@types/react@18.3.12)(react@18.3.1)(redux@5.0.1)
@@ -75,6 +81,9 @@ importers:
       '@tanstack/eslint-plugin-query':
         specifier: ^5.59.7
         version: 5.59.7(eslint@9.14.0)(typescript@5.6.3)
+      '@types/lodash.debounce':
+        specifier: ^4.0.9
+        version: 4.0.9
       '@types/node':
         specifier: ^22.8.6
         version: 22.8.6
@@ -134,7 +143,7 @@ importers:
         version: 2.1.4(@types/node@22.8.6)(@vitest/browser@2.1.4)(msw@2.6.0(@types/node@22.8.6)(typescript@5.6.3))(sass-embedded@1.80.5)
       vitest-browser-react:
         specifier: ^0.0.3
-        version: 0.0.3(@types/react-dom@18.3.1)(@types/react@18.3.12)(@vitest/browser@2.1.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vitest@2.1.4)
+        version: 0.0.3(@types/react-dom@18.3.1)(@types/react@18.3.12)(@vitest/browser@2.1.4(@types/node@22.8.6)(playwright@1.48.2)(typescript@5.6.3)(vite@5.4.10(@types/node@22.8.6)(sass-embedded@1.80.5))(vitest@2.1.4))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vitest@2.1.4(@types/node@22.8.6)(@vitest/browser@2.1.4)(msw@2.6.0(@types/node@22.8.6)(typescript@5.6.3))(sass-embedded@1.80.5))
 
 packages:
 
@@ -939,6 +948,12 @@ packages:
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
 
+  '@types/lodash.debounce@4.0.9':
+    resolution: {integrity: sha512-Ma5JcgTREwpLRwMM+XwBR7DaWe96nC38uCBDFKZWbNKD+osjVzdpnUSwBcqCptrp16sSOLBAUb50Car5I0TCsQ==}
+
+  '@types/lodash@4.17.13':
+    resolution: {integrity: sha512-lfx+dftrEZcdBPczf9d0Qv0x+j/rfNCMuC6OcfXmO8gkfeNAY88PgKUbvG56whcN23gc27yenwF6oJZXGFpYxg==}
+
   '@types/mdx@2.0.13':
     resolution: {integrity: sha512-+OWZQfAYyio6YkJb3HLxDrvnx6SWWDbC0zVPfBRzUk0/nqoDyf6dNxQi3eArPe8rJ473nobTMQ/8Zk+LxJ+Yuw==}
 
@@ -1714,6 +1729,9 @@ packages:
     resolution: {integrity: sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw==}
     engines: {node: '>=10'}
 
+  lodash.debounce@4.0.8:
+    resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
+
   lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
 
@@ -1951,6 +1969,11 @@ packages:
     resolution: {integrity: sha512-rYUYHeus+i27MvFE+Jaa4WsyBKGkL6qVgbJvSBoX8mbsWoABJXdEO0bZyi0F6i+4f0NuIb8AvqPMj3iXFHkMwg==}
     peerDependencies:
       react: ^16.6.0 || ^17.0.0 || ^18.0.0
+
+  react-icons@5.3.0:
+    resolution: {integrity: sha512-DnUk8aFbTyQPSkCfF8dbX6kQjXA9DktMeJqfjrg6cK9vwQVMxmcA3BfP4QoiztVmEHtwlTgLFsPuH2NskKT6eg==}
+    peerDependencies:
+      react: '*'
 
   react-is@17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
@@ -3370,6 +3393,12 @@ snapshots:
 
   '@types/json-schema@7.0.15': {}
 
+  '@types/lodash.debounce@4.0.9':
+    dependencies:
+      '@types/lodash': 4.17.13
+
+  '@types/lodash@4.17.13': {}
+
   '@types/mdx@2.0.13': {}
 
   '@types/minimatch@5.1.2': {}
@@ -4153,6 +4182,8 @@ snapshots:
     dependencies:
       p-locate: 5.0.0
 
+  lodash.debounce@4.0.8: {}
+
   lodash.merge@4.6.2: {}
 
   lodash@4.17.21: {}
@@ -4378,6 +4409,10 @@ snapshots:
       react: 18.3.1
       react-fast-compare: 3.2.2
       shallowequal: 1.1.0
+
+  react-icons@5.3.0(react@18.3.1):
+    dependencies:
+      react: 18.3.1
 
   react-is@17.0.2: {}
 
@@ -4809,7 +4844,7 @@ snapshots:
       fsevents: 2.3.3
       sass-embedded: 1.80.5
 
-  vitest-browser-react@0.0.3(@types/react-dom@18.3.1)(@types/react@18.3.12)(@vitest/browser@2.1.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vitest@2.1.4):
+  vitest-browser-react@0.0.3(@types/react-dom@18.3.1)(@types/react@18.3.12)(@vitest/browser@2.1.4(@types/node@22.8.6)(playwright@1.48.2)(typescript@5.6.3)(vite@5.4.10(@types/node@22.8.6)(sass-embedded@1.80.5))(vitest@2.1.4))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vitest@2.1.4(@types/node@22.8.6)(@vitest/browser@2.1.4)(msw@2.6.0(@types/node@22.8.6)(typescript@5.6.3))(sass-embedded@1.80.5)):
     dependencies:
       '@vitest/browser': 2.1.4(@types/node@22.8.6)(playwright@1.48.2)(typescript@5.6.3)(vite@5.4.10(@types/node@22.8.6)(sass-embedded@1.80.5))(vitest@2.1.4)
       react: 18.3.1
