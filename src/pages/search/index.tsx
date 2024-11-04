@@ -1,16 +1,27 @@
-import { useSearchParams } from "react-router-dom";
-import { useJobSearch } from "./search.services";
-import PageContainer from "@components/page.container";
 import JobCard from "@components/job-card";
 import JobCardSkeleton from "@components/job-card/job-card.skeleton";
+import PageContainer from "@components/page.container";
+import { useSearchParams } from "react-router-dom";
+import { useJobSearch } from "./search.services";
 
+import { addHistory } from "@store/history/history.actions";
+import { useAppDispatch, useAppSelector } from "@store/store.hooks";
+import { useEffect } from "react";
 import styles from "./search.module.scss";
 
 const SearchPage = () => {
+  const dispatch = useAppDispatch();
+
   const [searchParams] = useSearchParams();
+  const history = useAppSelector((state) => state.history);
+
   const query = searchParams.get("query") ?? "";
 
   const { data, isLoading } = useJobSearch(query?.toLowerCase());
+
+  useEffect(() => {
+    if (data) dispatch(addHistory(query));
+  }, [data]);
 
   return (
     <PageContainer title="Search">
@@ -46,9 +57,9 @@ const SearchPage = () => {
         <aside className={styles.history}>
           <h4>History</h4>
           <ul>
-            <li>Job 1</li>
-            <li>Job 2</li>
-            <li>Job 3</li>
+            {history.map((job) => (
+              <li key={job}>{job}</li>
+            ))}
           </ul>
         </aside>
       </div>

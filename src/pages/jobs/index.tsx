@@ -8,7 +8,7 @@ const JobsPage = () => {
   const observer = useRef<IntersectionObserver>();
 
   const { data, hasNextPage, fetchNextPage, isLoading, isFetchingNextPage } =
-    useJobListInfinite(6);
+    useJobListInfinite(12);
 
   const jobList = data?.pages.reduce(
     (acc, page) => [...acc, ...page.data.jobs],

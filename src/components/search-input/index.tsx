@@ -18,7 +18,12 @@ const SearchInput = () => {
   const debouncedUpdate = useCallback(
     debounce((value: string) => {
       if (value && value.length >= 3) searchParams.set("query", value);
-      else searchParams.delete("query");
+      else {
+        searchParams.delete("query");
+        if (value.length === 0) {
+          navigate(EROUTES.JOBS, { replace: true });
+        }
+      }
 
       setSearchParams(searchParams);
     }, 500),
