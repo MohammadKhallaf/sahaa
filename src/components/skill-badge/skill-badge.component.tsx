@@ -8,7 +8,7 @@ import { EROUTES } from "@app/constants";
 
 type Props = { id: string };
 
-const AnimatedLink = motion(Link);
+const AnimatedLink = motion.create(Link);
 
 const SkillBadge = ({ id }: Props) => {
   const { data, isLoading } = useSkillDetails(id);

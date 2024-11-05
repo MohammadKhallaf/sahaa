@@ -10,6 +10,7 @@ import { useJobSearch } from "./search.services";
 import SideList from "@components/side-list";
 
 import styles from "./search.module.scss";
+import ErrorEmpty from "@components/error-empty";
 
 const SearchPage = () => {
   const dispatch = useAppDispatch();
@@ -37,7 +38,10 @@ const SearchPage = () => {
       <div className={styles.container}>
         <section className={styles.container__results}>
           {!isLoading && !data?.data.jobs.length && !!query && (
-            <p>No jobs found for "{query}"</p>
+            <ErrorEmpty
+              title="No jobs found"
+              message="We couldn't find any jobs matching your search"
+            />
           )}
           {!isLoading && !data?.data.jobs.length && !query && (
             <p>
