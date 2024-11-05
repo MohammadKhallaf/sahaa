@@ -1,50 +1,69 @@
-# React + TypeScript + Vite
+# Sahaa
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A space to share jobs 
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Job listing 
+- Job details
+- Search jobs by keywords
+- Search jobs by skills
+- Search history
+- SEO optimized with pages titles
 
-## Expanding the ESLint configuration
+## 📋 Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Node.js (v18 or higher)
+- pnpm
+- Any other system requirements
 
-- Configure the top-level `parserOptions` property like this:
+## ⚡ Quick Start
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. Clone the repository:
+```bash
+git clone https://github.com/MohammadKhallaf/sahaa.git
+```
+2. Install the package manager:
+```bash
+npm i -g pnpm
+```
+3. Install dependencies:
+```bash
+pnpm install
+```
+4. Start the development server:
+```bash
+pnpm dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 🛠️ Technology Stack
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- React 18
+- TypeScript
+- Vite
+- ESLint
+- Redux Toolkit
+- React Query
+- SCSS
+- Storybook
+- Vitest
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+
+## 📖 Project Structure
 ```
+src/
+├── components/ # Reusable components
+├── pages/ # Page components
+├── assets/ # Static assets
+├── styles/ # Global styles
+├── utils/ # Utility functions
+└── types/ # TypeScript type definitions
+```
+
+## 🔧 Configuration
+
+
+1. Create a `.env` file in the root directory
+2. Add the following variables:
+   1. `VITE_API_BASE`: The URL of the API endpoint
+
