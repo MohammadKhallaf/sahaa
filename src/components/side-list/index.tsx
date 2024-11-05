@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "./side-list.module.scss";
+import { containerVariants, itemVariants } from "./side-list.animation";
 
 type Props = {
   title: string;
@@ -9,30 +10,6 @@ type Props = {
     to: string;
     tip?: string;
   }[];
-};
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, x: -20 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      type: "spring",
-      stiffness: 300,
-      damping: 24,
-    },
-  },
 };
 
 const SideList = ({ title, list }: Props) => {
