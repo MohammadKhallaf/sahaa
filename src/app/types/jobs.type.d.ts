@@ -16,3 +16,8 @@ interface IJobListResponse
     jobs: IJob[];
     meta: Meta;
   }> {}
+
+interface IJobDetailsResponse
+  extends IResponse<{
+    job: IJob;
+  }> {}

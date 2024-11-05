@@ -6,7 +6,7 @@ export const jobGetAll = ({ cursor = 0, limit = 10 }: IPagination) =>
     .then(({ data }) => data);
 
 export const jobGetOne = (uuid: string) =>
-  api.get(`/job/${uuid}`).then(({ data }) => data);
+  api.get<IJobDetailsResponse>(`/job/${uuid}`).then(({ data }) => data);
 
 export const jobSearch = (query: string) =>
   api
