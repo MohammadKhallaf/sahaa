@@ -8,6 +8,7 @@ import SearchLayout from "@layouts/search.layout";
 import JobsPage from "@pages/jobs";
 import JobDetails from "@pages/jobs/job-details";
 import SearchPage from "@pages/search";
+import SkillDetails from "@pages/skills/skill-details";
 
 export default createBrowserRouter([
   {
@@ -29,7 +30,8 @@ export default createBrowserRouter([
               },
             ],
           },
-          { path: EROUTES.SKILLS, element: <div>Skills</div> },
+
+          { path: `${EROUTES.SKILLS}/:uuid`, element: <SkillDetails /> },
           { path: EROUTES.SEARCH, element: <SearchPage /> },
         ],
       },

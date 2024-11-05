@@ -9,7 +9,7 @@ interface ISkillRelationships {
   skills: Relationship[];
 }
 
-interface ISkill extends Entity {
+interface ISkill extends IEntity {
   attributes: ISkillAttributes;
   relationships: ISkillRelationships;
 }

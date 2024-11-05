@@ -19,13 +19,6 @@ export const useJobDetails = (uuid: string) => {
   });
 };
 
-export const useSkill = (uuid: string) => {
-  return useQuery({
-    queryKey: [EQUERIES.SKILL_GET_ONE, uuid],
-    queryFn: () => skillGetOne(uuid),
-  });
-};
-
 // API do not supply related jobs directly
 // we will get them from the related skills
 export const useGetRelatedJobs = (uuid: string, skills: string[]) => {

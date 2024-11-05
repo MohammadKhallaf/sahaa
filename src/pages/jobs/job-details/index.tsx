@@ -18,20 +18,11 @@ const JobDetails = () => {
 
   const { data: relatedInfo } = useGetRelatedJobs(uuid, relatedSkills);
 
-  // remove duplicated names
   const relatedJobs: IJob[] = useMemo(() => {
     if (!relatedInfo?.relatedJobs?.length) return [];
 
     const jobs = relatedInfo?.relatedJobs;
     return jobs;
-    // const uniqueRelatedJobs = new Map(
-    //   relatedInfo?.relatedJobs.map((job) => [
-    //     job.attributes.title.trim().toLowerCase(),
-    //     job,
-    //   ])
-    // );
-
-    // return Array.from(uniqueRelatedJobs.values());
   }, [relatedInfo]);
 
   return (
