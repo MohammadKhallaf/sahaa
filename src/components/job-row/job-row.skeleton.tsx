@@ -1,6 +1,7 @@
-import styles from "./job-row.module.scss";
 import cn from "clsx";
 import { motion } from "framer-motion";
+
+import styles from "./job-row.module.scss";
 
 const JobRowSkeleton = () => {
   return (

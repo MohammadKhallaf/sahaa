@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
-import styles from "./job-row.module.scss";
-import JobRowSkeleton from "./job-row.skeleton";
-import { useJobDetails } from "@pages/jobs/jobs.services";
 import SkillBadge from "@components/skill-badge/skill-badge.component";
+import { useJobDetails } from "@pages/jobs/jobs.services";
+import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import JobRowSkeleton from "./job-row.skeleton";
+
+import styles from "./job-row.module.scss";
 
 type Props = { id: string };
 
