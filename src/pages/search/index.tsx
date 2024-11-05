@@ -1,12 +1,14 @@
 import JobCard from "@components/job-card";
 import JobCardSkeleton from "@components/job-card/job-card.skeleton";
 import PageContainer from "@components/page.container";
-import { useSearchParams } from "react-router-dom";
-import { useJobSearch } from "./search.services";
-
 import { addHistory } from "@store/history/history.actions";
 import { useAppDispatch, useAppSelector } from "@store/store.hooks";
 import { useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
+import { useJobSearch } from "./search.services";
+
+import SideList from "@components/side-list";
+
 import styles from "./search.module.scss";
 
 const SearchPage = () => {
@@ -54,14 +56,13 @@ const SearchPage = () => {
             )}
           </ul>
         </section>
-        <aside className={styles.history}>
-          <h4>History</h4>
-          <ul>
-            {history.map((job) => (
-              <li key={job}>{job}</li>
-            ))}
-          </ul>
-        </aside>
+        <SideList
+          title="History"
+          list={history.map((job) => ({
+            title: job,
+            to: `/search?query=${job}`,
+          }))}
+        />
       </div>
     </PageContainer>
   );

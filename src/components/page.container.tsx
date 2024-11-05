@@ -1,5 +1,6 @@
 import { PropsWithChildren } from "react";
 import { Helmet } from "react-helmet-async";
+import styles from "./page.module.scss";
 
 type Props = PropsWithChildren<{
   title?: string;
@@ -14,7 +15,7 @@ const PageContainer: React.FC<Props> = ({
   className,
 }) => {
   return (
-    <div>
+    <div className={styles.container}>
       <Helmet>
         <title>{title ? `Sahaa | ${title}` : `Sahaa`}</title>
       </Helmet>

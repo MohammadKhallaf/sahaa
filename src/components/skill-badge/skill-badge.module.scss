@@ -1,4 +1,6 @@
 .container {
+  cursor: pointer;
+
   background-color: var(--color-secondary);
   padding-inline: var(--spacing-sm);
   padding-block: var(--spacing-xs);
@@ -6,4 +8,9 @@
   color: black;
 
   font-size: var(--font-size-xs);
+
+  &:hover {
+    background-color: var(--color-primary);
+    color: white;
+  }
 }
