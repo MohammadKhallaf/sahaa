@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { HashRouter } from "react-router-dom";
 import { describe, expect, it } from "vitest";
 import { Navbar } from ".";
