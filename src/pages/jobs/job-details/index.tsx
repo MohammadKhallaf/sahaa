@@ -1,4 +1,4 @@
-import PageContainer from "@components/page.container";
+import PageContainer from "@components/page-container";
 import SideList from "@components/side-list";
 import SkillCard from "@components/skill-card";
 import { useParams } from "react-router-dom";

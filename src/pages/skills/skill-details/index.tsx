@@ -1,5 +1,5 @@
 import { EROUTES } from "@app/constants";
-import PageContainer from "@components/page.container";
+import PageContainer from "@components/page-container";
 import SideList from "@components/side-list";
 import { useParams } from "react-router-dom";
 import { useGetRelatedSkills, useSkillDetails } from "../skills.services";

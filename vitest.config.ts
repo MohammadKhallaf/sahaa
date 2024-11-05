@@ -33,4 +33,11 @@ export default defineConfig({
     },
     setupFiles: ["./src/setup-tests.tsx"],
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: "modern",
+      },
+    },
+  },
 });

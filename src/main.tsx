@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import App from "./pages/app.page.tsx";
 
 import "normalize.css/normalize.css";
-import "./index.scss";
+import "./styles/index.scss";
 
 const rootElement = document.getElementById("root")!;
 

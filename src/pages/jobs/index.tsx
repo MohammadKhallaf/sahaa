@@ -1,6 +1,6 @@
 import JobCard from "@components/job-card";
 import JobCardSkeleton from "@components/job-card/job-card.skeleton";
-import PageContainer from "@components/page.container";
+import PageContainer from "@components/page-container";
 import { useCallback, useRef } from "react";
 import { useJobListInfinite } from "./jobs.services";
 
