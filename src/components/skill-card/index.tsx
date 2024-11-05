@@ -1,19 +1,43 @@
 import { useSkill } from "@pages/jobs/jobs.services";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import styles from "./skill-card.module.scss";
+import SkillCardSkeleton from "./skill-card.skeleton";
 
 type Props = { id: string };
 
 const SkillCard = ({ id }: Props) => {
-  const { data } = useSkill(id);
+  const { data, isLoading } = useSkill(id);
+
+  if (isLoading) return <SkillCardSkeleton />;
   return (
-    <li>
-      <h3>{data?.data.skill.attributes.name}</h3>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
-        odit iste reiciendis? Porro iusto quas alias enim ipsum optio excepturi
-        possimus asperiores rerum, natus odio quia? Nesciunt recusandae
-        laboriosam ipsum!
+    <motion.li
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 10 }}
+      custom={id}
+      transition={{ duration: 0.2 }}
+      className={styles.container}
+    >
+      <Link to={`/skills/${id}`}>
+        <h3 className={styles.title}>{data?.data.skill.attributes.name}</h3>
+      </Link>
+      <p className={styles.description}>
+        {(data?.data.skill.attributes as any)?.description ??
+          "No API data provided"}
       </p>
-    </li>
+      <div className={styles.attributes}>
+        <p>
+          <b>Type:</b> {data?.data.skill.attributes.type}
+        </p>
+        <p>
+          <b>Importance:</b> {data?.data.skill.attributes.importance}
+        </p>
+        <p>
+          <b>Level:</b> {data?.data.skill.attributes.level}
+        </p>
+      </div>
+    </motion.li>
   );
 };
 

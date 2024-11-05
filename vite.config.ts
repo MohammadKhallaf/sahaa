@@ -13,6 +13,7 @@ export default defineConfig({
       "@components": path.resolve(__dirname, "./src/components"),
       "@layouts": path.resolve(__dirname, "./src/layouts"),
       "@pages": path.resolve(__dirname, "./src/pages"),
+      "@styles": path.resolve(__dirname, "./src/styles"),
 
       "@schemas": path.resolve(__dirname, "./src/app/schemas"),
       "@utils": path.resolve(__dirname, "./src/app/utils"),

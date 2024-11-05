@@ -2,6 +2,7 @@
   width: 100%;
   display: flex;
   flex-direction: row;
+  gap: var(--spacing-md);
 
   .container__results {
     flex: 1;

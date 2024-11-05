@@ -26,11 +26,14 @@ const SearchPage = () => {
   }, [data]);
 
   return (
-    <PageContainer title="Search">
-      <h2>
-        {query && `"${query}"`} jobs ({data?.data.meta.count ?? 0})
-      </h2>
-
+    <PageContainer
+      title="Search"
+      header={
+        <h2>
+          {query && `"${query}"`} jobs ({data?.data.meta.count ?? 0})
+        </h2>
+      }
+    >
       <div className={styles.container}>
         <section className={styles.container__results}>
           {!isLoading && !data?.data.jobs.length && !!query && (

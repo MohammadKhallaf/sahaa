@@ -16,6 +16,8 @@
   --color-success: #28a745;
   --color-error: #dc3545;
 
+  --color-background-dark: #e5e5e5;
+
   // Typography
   --font-family-base: "Roboto", system-ui, sans-serif;
   --font-size-base: 16px;
@@ -54,7 +56,7 @@
   font-weight: 400;
 
   font-size: 18px;
-  color-scheme: light dark;
+  // color-scheme: light dark;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -119,24 +121,27 @@ p {
   text-align: start;
 }
 
-// styles/mixins/_index.scss
-@mixin flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  display: inline-block;
+  width: fit-content;
+  &:hover {
+    text-decoration: inherit;
+  }
 }
 
-@mixin responsive-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
+ul {
+  margin: 0;
+  padding: var(--spacing-md);
 }
 
-@mixin truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-base);
+  background-color: var(--color-background-dark);
 }
 
 .jobs-container {
@@ -144,7 +149,8 @@ p {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1rem;
   padding: var(--spacing-md);
-
+  padding-top: 0;
+  margin: 0;
   @media screen and (max-width: 500px) {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }

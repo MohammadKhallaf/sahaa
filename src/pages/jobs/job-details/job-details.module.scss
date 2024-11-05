@@ -1,0 +1,15 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-md);
+
+  .container__main {
+    flex: 1;
+    padding: var(--spacing-md);
+    background-color: var(--color-background);
+    border-radius: var(--radius-md);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+  }
+}

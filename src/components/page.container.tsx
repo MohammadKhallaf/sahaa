@@ -19,7 +19,7 @@ const PageContainer: React.FC<Props> = ({
       <Helmet>
         <title>{title ? `Sahaa | ${title}` : `Sahaa`}</title>
       </Helmet>
-      {header && <header>{header}</header>}
+      {header && <header className={styles.header}>{header}</header>}
       <main className={className}>{children}</main>
     </div>
   );

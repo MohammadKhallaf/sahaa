@@ -2,4 +2,7 @@
   padding: var(--spacing-xl);
   max-width: 1200px;
   margin-inline: auto;
+  .header {
+    margin-bottom: var(--spacing-lg);
+  }
 }

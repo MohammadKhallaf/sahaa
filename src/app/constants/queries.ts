@@ -5,4 +5,6 @@ export enum EQUERIES {
 
   SKILL_GET_ALL = "skills",
   SKILL_GET_ONE = "skill",
+
+  JOB_RELATED_SKILLS = "job-related-skills",
 }

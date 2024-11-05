@@ -1,3 +1,5 @@
+@use "@styles/mixins" as *;
+
 .container {
   display: flex;
   flex-direction: column;
@@ -7,9 +9,47 @@
   color: var(--color-text);
   padding: var(--spacing-md);
   border-radius: var(--radius-md);
-  height: clamp(20rem, 50vh, 500px);
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 70vh;
 
-  li {
-    text-align: start;
+  h4 {
+    position: sticky;
+    background-color: var(--color-background);
+    width: inherit;
+    left: 0;
+    z-index: 1;
+    margin: -1rem;
+    padding: 1rem;
+    top: -1rem;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+
+    li {
+      text-align: start;
+      color: var(--color-text-light);
+      list-style: inside;
+
+      a {
+        text-decoration: underline;
+        text-underline-offset: var(--spacing-xs);
+        transition: color var(--transition-fast);
+        color: inherit;
+        @include truncate;
+        max-width: 220px;
+
+        &:hover {
+          color: var(--color-primary);
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    display: none;
   }
 }
