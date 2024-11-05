@@ -1,13 +1,14 @@
-import { useSkill } from "@pages/jobs/jobs.services";
-import { Link } from "react-router-dom";
+import { useSkillDetails } from "@pages/skills/skills.services";
 import { motion } from "framer-motion";
-import styles from "./skill-card.module.scss";
+import { Link } from "react-router-dom";
 import SkillCardSkeleton from "./skill-card.skeleton";
+
+import styles from "./skill-card.module.scss";
 
 type Props = { id: string };
 
 const SkillCard = ({ id }: Props) => {
-  const { data, isLoading } = useSkill(id);
+  const { data, isLoading } = useSkillDetails(id);
 
   if (isLoading) return <SkillCardSkeleton />;
   return (

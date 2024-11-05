@@ -1,0 +1,101 @@
+@use "@styles/mixins" as *;
+
+.container {
+  list-style: none;
+  background-color: var(--color-background-dark);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  border-radius: var(--radius-md);
+  text-align: start;
+  min-height: 9rem;
+  .title {
+    width: fit-content;
+    text-decoration: underline;
+    text-underline-offset: var(--spacing-xs);
+    transition: color var(--transition-fast);
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+  .description {
+    padding-top: var(--spacing-md);
+    @include truncate;
+  }
+
+  .skills {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    gap: var(--spacing-xl);
+    padding-top: var(--spacing-md);
+  }
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--color-text-primary);
+}
+
+.description {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.attributes {
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+
+  p {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  b {
+    color: var(--color-text-primary);
+  }
+}
+
+.skeleton {
+  animation: pulse 1.5s ease-in-out infinite;
+
+  .title {
+    height: 24px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    width: 70%;
+  }
+
+  .description {
+    height: 60px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+
+  .attribute {
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    width: 50%;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

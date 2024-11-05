@@ -1,18 +1,23 @@
 import { motion } from "framer-motion";
-import { useSkill } from "../../pages/jobs/jobs.services";
 import { skillBadgeVariants } from "./skill-badge.animation";
 import styles from "./skill-badge.module.scss";
 import SkillBadgeSkeleton from "./skill-badge.skeleton";
+import { useSkillDetails } from "@pages/skills/skills.services";
+import { Link } from "react-router-dom";
+import { EROUTES } from "@app/constants";
 
-type Props = {  id: string;};
+type Props = { id: string };
+
+const AnimatedLink = motion(Link);
 
 const SkillBadge = ({ id }: Props) => {
-  const { data, isLoading } = useSkill(id);
+  const { data, isLoading } = useSkillDetails(id);
 
   return isLoading ? (
     <SkillBadgeSkeleton />
   ) : (
-    <motion.div
+    <AnimatedLink
+      to={`${EROUTES.SKILLS}/${id}`}
       className={styles.container}
       variants={skillBadgeVariants}
       initial="hidden"
@@ -22,7 +27,7 @@ const SkillBadge = ({ id }: Props) => {
       layout
     >
       {data?.data.skill.attributes.name}
-    </motion.div>
+    </AnimatedLink>
   );
 };
 
