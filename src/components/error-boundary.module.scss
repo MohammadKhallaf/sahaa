@@ -1,0 +1,74 @@
+.container {
+  background: linear-gradient(to bottom right, #cbd5e1, #e2e8f0, #f1f5f9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.full-screen {
+  height: 100vh;
+  width: 100vw;
+}
+
+.full-content {
+  height: 100%;
+  width: 100%;
+}
+
+.error-content {
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+  font-size: 1.875rem;
+  color: #000;
+  border-right: 2px solid #1e293b;
+}
+
+.status-code {
+  padding: 0 0.75rem;
+  font-weight: 500;
+  color: #0284c7;
+}
+
+.warning {
+  padding: 0 0.75rem;
+  font-weight: 500;
+  color: #f59e0b;
+}
+
+.message {
+  padding: 0 0.75rem;
+}
+
+.button-group {
+  display: flex;
+  width: fit-content;
+  flex-direction: row;
+  gap: 0.75rem;
+}
+
+.button-contained {
+  // Add your button styles based on your design system
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  background-color: #0284c7;
+  color: white;
+
+  &:hover {
+    background-color: #0369a1;
+  }
+}
+
+.button-outlined {
+  // Add your button styles based on your design system
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid #0284c7;
+  color: #0284c7;
+
+  &:hover {
+    background-color: rgba(2, 132, 199, 0.1);
+  }
+}

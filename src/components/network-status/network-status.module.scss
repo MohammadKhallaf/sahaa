@@ -1,0 +1,15 @@
+.container {
+  position: fixed;
+  top: var(--navbar-height);
+  left: 0;
+  right: 0;
+  background-color: #ff4444;
+  color: white;
+  padding: var(--spacing-xs);
+  text-align: center;
+  z-index: 999;
+
+  span {
+    font-weight: 500;
+  }
+}

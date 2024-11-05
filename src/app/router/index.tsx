@@ -9,11 +9,14 @@ import JobsPage from "@pages/jobs";
 import JobDetails from "@pages/jobs/job-details";
 import SearchPage from "@pages/search";
 import SkillDetails from "@pages/skills/skill-details";
+import ErrorBoundary from "@components/error-boundary";
 
 export default createBrowserRouter([
   {
     path: EROUTES.ROOT,
     element: <RootLayout />,
+    errorElement: <ErrorBoundary isRoot />,
+
     children: [
       {
         path: EROUTES.ROOT,
